@@ -58,6 +58,8 @@ while (!shouldExit)
             ChangePlayer();
             ShowFood();
         }
+
+        
     }
 }
 
@@ -174,8 +176,8 @@ void SplashScreen()
     x = random.Next(1, 30);
     y = random.Next(1, 30);
     Console.SetCursorPosition(x, y);
-    Console.WriteLine("Feed Me!");
-    Console.WriteLine("Copyright N.Booth for Mogpie 2024");
+    Console.WriteLine("Feed Me!\n");
+    Console.WriteLine("Copyright N.Booth for Mogpie 2024\n");
     Console.WriteLine($"Date: {today}");
     System.Threading.Thread.Sleep(2000);
     Console.Clear();
