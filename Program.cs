@@ -1,10 +1,14 @@
 ﻿using System;
 
+// MiniGame 2024
+
 Random random = new Random();
 Console.CursorVisible = false;
 int height = Console.WindowHeight - 1;
 int width = Console.WindowWidth - 5;
 bool shouldExit = false;
+
+SplashScreen();
 
 // Console position of the player
 int playerX = 0;
@@ -159,4 +163,20 @@ void InitializeGame()
     ShowFood();
     Console.SetCursorPosition(0, 0);
     Console.Write(player);
+}
+
+//Splash screen to start the game
+void SplashScreen()
+{
+    string today = DateTime.Now.ToShortDateString();
+    int x, y;
+    Console.Clear();
+    x = random.Next(1, 30);
+    y = random.Next(1, 30);
+    Console.SetCursorPosition(x, y);
+    Console.WriteLine("Feed Me!");
+    Console.WriteLine("Copyright N.Booth for Mogpie 2024");
+    Console.WriteLine($"Date: {today}");
+    System.Threading.Thread.Sleep(2000);
+    Console.Clear();
 }
