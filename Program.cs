@@ -10,6 +10,9 @@ bool shouldExit = false;
 
 SplashScreen();
 
+// Player Lives
+int lives = 4;
+
 // Console position of the player
 int playerX = 0;
 int playerY = 0;
@@ -45,6 +48,9 @@ while (!shouldExit)
         }
         else if (PlayerIsSick())
         {
+            lives--;
+            if (lives == 0)
+            { LivesGone(); }
             FreezePlayer();
         }
         else
@@ -113,6 +119,16 @@ void FreezePlayer()
 {
     System.Threading.Thread.Sleep(1000);
     player = states[0];
+}
+
+// Ends game when player is out of lives
+void LivesGone()
+{
+    System.Threading.Thread.Sleep(1000);
+    Console.Clear();
+    Console.WriteLine("Player is out of lives!");
+    System.Threading.Thread.Sleep(1000);
+    shouldExit = true;
 }
 
 // Reads directional input from the Console and moves the player
